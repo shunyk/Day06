@@ -10,8 +10,10 @@ public class FoodMain {
 		FoodInput fi = new FoodInput();
 		FoodMenu fm = new FoodMenu();
 		FoodView fv = new FoodView();
+		boolean check = true;
 		
 		Food[] foods = fi.menu();
+		while(check){
 		
 		System.out.println("1. 주문");
 		System.out.println("2. 결산");
@@ -20,7 +22,10 @@ public class FoodMain {
 			fm.input(foods);
 			
 		}else {
-			fv.view(foods);
+			fv.view(foods, fm.mc1, fm.mc2, fm.mc3);
+			check = !check;
+			break;
+		}
 		}
 
 	}
