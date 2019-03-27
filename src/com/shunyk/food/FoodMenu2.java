@@ -19,17 +19,23 @@ public class FoodMenu2 {
 				System.out.println(i+1 + "번 " + foods[i].name);
 			}
 			System.out.println(foods.length+1 + "번 결제");
-			System.out.println("=======================");
+			System.out.println("========================");
 			int select = sc.nextInt();
 			if(select<=foods.length) {
 				System.out.println("주문 수량");
 				count = sc.nextInt();
 				for(int i=0; i<foods.length; i++) {
 					if(select-1 == i) {
+						if(foods[i].stock == 0) {
+							System.out.println("재고 없음");
+							System.out.println("========================");
+							break;
+						}
 						foods[i].stock -= count;
 						foods[i].hap += count;
 						foods[i].count = count;
 						break;
+						
 					}
 				}
 			}else {
@@ -38,7 +44,9 @@ public class FoodMenu2 {
 						System.out.println(foods[i].name + " " + foods[i].count + "인분" + "\t" +foods[i].count*foods[i].price + "원");
 					}
 				}
+				System.out.println("========================");
 				check = !check;
+
 				break;
 			}
 		}
