@@ -7,8 +7,8 @@ public class FoodMain {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		FoodInput fi = new FoodInput();
-		FoodMenu2 fm2 = new FoodMenu2();
-		FoodView2 fv2 = new FoodView2();
+		FoodMenu fm = new FoodMenu();
+		FoodView fv = new FoodView();
 		boolean check = true;
 
 		Food[] foods = fi.menu();
@@ -18,10 +18,10 @@ public class FoodMain {
 			System.out.println("2. 결산");
 			int select = sc.nextInt();
 			if (select == 1) {
-				fm2.input(foods);
+				fm.input2(foods);
 
 			}else {
-				fv2.view(foods);
+				fv.view2(foods);
 				check = !check;
 				break;
 			}
