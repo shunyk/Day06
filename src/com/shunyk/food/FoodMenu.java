@@ -6,12 +6,13 @@ public class FoodMenu {
 	int mc1=0;
 	int mc2=0;
 	int mc3=0;
+	int m1=0;
+	int m2=0;
+	int m3=0;
+	
 	public void input(Food [] foods) {
 		Scanner sc = new Scanner(System.in);
 		FoodInput menu = new FoodInput();
-		Noodle noodle = new Noodle();
-		Kimbob kimbob = new Kimbob();
-		Tok tok = new Tok();
 		boolean check = true;
 
 		int count = 0;
@@ -24,32 +25,47 @@ public class FoodMenu {
 			int a = sc.nextInt();
 			switch(a) {
 			case 1:
+				if(foods[0].stock == 0) {
+					System.out.println("재고가 없습니다.");
+					break;
+				}
 				System.out.println("수량 선택");
 				count = sc.nextInt();
 				foods[0].stock -= count;
-				mc1 = count;
+				mc1 += count;
+				m1 = count;
 				break;
 			case 2:
+				if(foods[0].stock == 0) {
+					System.out.println("재고가 없습니다.");
+					break;
+				}
 				System.out.println("수량 선택");
 				count = sc.nextInt();
 				foods[1].stock -= count;
-				mc2 = count;
+				mc2 += count;
+				m2 = count;
 				break;
 			case 3:
+				if(foods[0].stock == 0) {
+					System.out.println("재고가 없습니다.");
+					break;
+				}
 				System.out.println("수량 선택");
 				count = sc.nextInt();
 				foods[2].stock -= count;
-				mc3 = count;
+				mc3 += count;
+				m3 = count;
 				break;
 			default:
-				if(mc1 != 0) {
-					System.out.println("라면 " + mc1 + "인분" + "\t" + mc1*foods[0].price + "원");
+				if(m1 != 0) {
+					System.out.println("라면 " + m1 + "인분" + "\t" + m1*foods[0].price + "원");
 				}
-				if(mc2 != 0) {
-					System.out.println("김밥 " + mc2 + "인분" + "\t" + mc2*foods[1].price + "원");
+				if(m2 != 0) {
+					System.out.println("김밥 " + m2 + "인분" + "\t" + m2*foods[1].price + "원");
 				}
-				if(mc3 != 0) {
-					System.out.println("떡볶이 " + mc3 + "인분" + "\t" + mc3*foods[2].price + "원");
+				if(m3 != 0) {
+					System.out.println("떡볶이 " + m3 + "인분" + "\t" + m3*foods[2].price + "원");
 				}
 				check = !check;
 				break;

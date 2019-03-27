@@ -8,8 +8,8 @@ public class FoodMain {
 		Scanner sc = new Scanner(System.in);
 		Food food = new Food();
 		FoodInput fi = new FoodInput();
-		FoodMenu fm = new FoodMenu();
-		FoodView fv = new FoodView();
+		FoodMenu2 fm2 = new FoodMenu2();
+		FoodView2 fv2 = new FoodView2();
 		boolean check = true;
 		
 		Food[] foods = fi.menu();
@@ -19,10 +19,10 @@ public class FoodMain {
 		System.out.println("2. 결산");
 		int select = sc.nextInt();
 		if (select == 1) {
-			fm.input(foods);
+			fm2.input(foods);
 			
 		}else {
-			fv.view(foods, fm.mc1, fm.mc2, fm.mc3);
+			fv2.view(foods, fm2.mc);
 			check = !check;
 			break;
 		}
