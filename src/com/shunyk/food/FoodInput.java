@@ -8,7 +8,7 @@ public class FoodInput {
 		System.out.println("메뉴 수 입력");
 		int count = sc.nextInt();
 		Food[] foods = new Food[count];
-		
+
 		for(int i=0; i<foods.length; i++) {
 			Food food = new Food();
 			System.out.println("메뉴명 : ");

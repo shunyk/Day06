@@ -3,15 +3,10 @@ package com.shunyk.food;
 import java.util.Scanner;
 
 public class FoodMenu2 {
-	int mc[];
-	int m[];
-	
+
 	public void input(Food [] foods) {
 		Scanner sc = new Scanner(System.in);
-		FoodInput menu = new FoodInput();
 		boolean check = true;
-		mc = new int[foods.length];
-		m = new int[foods.length];
 
 		int count = 0;
 		while(check) {	
@@ -32,15 +27,15 @@ public class FoodMenu2 {
 				for(int i=0; i<foods.length; i++) {
 					if(select-1 == i) {
 						foods[i].stock -= count;
-						mc[i] += count;
-						m[i] = count;
+						foods[i].hap += count;
+						foods[i].count = count;
 						break;
 					}
 				}
 			}else {
 				for(int i=0; i<foods.length; i++) {
-					if(m[i] != 0) {
-						System.out.println(foods[i].name + " " + m[i] + "인분" + "\t" + m[i]*foods[i].price + "원");
+					if(foods[i].count != 0) {
+						System.out.println(foods[i].name + " " + foods[i].count + "인분" + "\t" +foods[i].count*foods[i].price + "원");
 					}
 				}
 				check = !check;

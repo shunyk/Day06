@@ -12,7 +12,6 @@ public class FoodMenu {
 	
 	public void input(Food [] foods) {
 		Scanner sc = new Scanner(System.in);
-		FoodInput menu = new FoodInput();
 		boolean check = true;
 
 		int count = 0;
