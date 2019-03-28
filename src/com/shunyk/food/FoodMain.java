@@ -22,7 +22,7 @@ public class FoodMain {
 
 			}else {
 				fv.view2(foods);
-				check = !check;
+				//check = !check;
 				break;
 			}
 		}
